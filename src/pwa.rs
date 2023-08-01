@@ -100,16 +100,3 @@ pub fn get_input(value: Option<String>, message: &str) -> String {
         input.trim().to_string()
     })
 }
-
-// - Help
-// - pwa check (reveals errors)
-// - installation
-// - Init
-//   - logo url/path (mobile version of your logo)
-//   - app name
-//   - path to static files
-//   - app description
-//   - background colour
-//   - base url e.g "/"
-//   - theme colour
-//   - icon path
