@@ -147,7 +147,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "pwa-generate"
+name = "pwa-cli"
 version = "0.1.0"
 dependencies = [
  "clap",
