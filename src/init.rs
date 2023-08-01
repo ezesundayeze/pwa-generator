@@ -3,7 +3,7 @@ use clap::Parser;
 
 /// Main command
 #[derive(Parser, Debug)]
-#[clap(version = "1.0", author = "Your Name <your-email@example.com>")]
+#[clap(version = "1.0", author = "Eze Sunday")]
 pub struct Opts {
     #[clap(subcommand)]
     subcmd: SubCommand,
