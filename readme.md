@@ -1,6 +1,6 @@
 # Convert a vanila HTML website to PWA
 
-Convert a vanila html website to a PWA app with Rust
+Convert a vanila html website to a PWA app with Rust - this is a work on progress
 
 ## Commands
 - Help
