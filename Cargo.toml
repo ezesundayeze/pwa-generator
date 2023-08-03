@@ -7,3 +7,6 @@ edition = "2021"
 
 [dependencies]
 clap = { version = "3.0.0-beta.5", features = ["derive"] }
+kuchiki = "0.8.1"
+html5ever = "0.25"
+# html5ever = { version = "0.25", features = ["unstable"] }

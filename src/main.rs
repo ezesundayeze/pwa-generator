@@ -1,6 +1,9 @@
 use clap::Parser;
 mod pwa;
 use pwa::{ init_pwa, Init};
+pub mod html_parser;
+
+
 
 #[derive(Parser, Debug)]
 #[clap(version = "1.0", author = "Eze Sunday")]

@@ -1,7 +1,7 @@
+use crate::html_parser;
 use clap::Parser;
 
-
-/// Main command
+// Main command
 #[derive(Parser, Debug)]
 #[clap(version = "1.0", author = "Eze Sunday")]
 pub struct Opts {
@@ -9,43 +9,62 @@ pub struct Opts {
     subcmd: SubCommand,
 }
 
-/// Subcommands
+// Subcommands
 #[derive(Parser, Debug)]
 enum SubCommand {
     Init(Init),
 }
 
-/// Initializes a new PWA
+// Initializes a new PWA
 #[derive(Parser, Debug)]
 pub struct Init {
-    /// Sets the logo URL or path
+    #[clap(short, long)]
+    worker_script: Option<String>,
+    #[clap(short, long)]
+    file_path: Option<String>,
+    // Sets the logo URL or path
     #[clap(short, long)]
     logo: Option<String>,
-    /// Sets the app name
+    // Sets the app name
     #[clap(short, long)]
     name: Option<String>,
-    /// Sets the path to static files
+    // Sets the path to static files
     #[clap(short = 's', long)]
     static_files: Option<String>,
-    /// Sets the app description
+    // Sets the app description
     #[clap(short, long)]
     description: Option<String>,
-    /// Sets the background color
+    // Sets the background color
     #[clap(short, long)]
     background: Option<String>,
-    /// Sets the base URL
+    // Sets the base URL
     #[clap(short, long)]
     url: Option<String>,
-    /// Sets the theme color
+    // Sets the theme color
     #[clap(short, long)]
     theme: Option<String>,
-    /// Sets the icon path
+    // Sets the icon path
     #[clap(short, long)]
     icon: Option<String>,
 }
 
-
 pub fn init_pwa(args: Init) {
+    let worker_script: String = get_input(
+        args.worker_script,
+        "Please, enter the path to the worker script:",
+    );
+    let html_file_path = get_input(
+        args.file_path,
+        "Please, enter the path to your root html file:",
+    );
+    println!("Worker script file path: {}", html_file_path);
+
+    match html_parser::html_parser(&html_file_path, worker_script.as_str()) {
+        Ok(_) => println!("HTML parsing and modification successful."),
+        Err(e) => eprintln!("An error occurred during HTML parsing and modification: {}", e),
+    }
+    
+
     let logo = get_input(
         args.logo,
         "Logo was not provided. Please enter the logo URL or path:",
