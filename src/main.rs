@@ -2,7 +2,8 @@ use clap::Parser;
 mod pwa;
 use pwa::{ init_pwa, Init};
 pub mod html_parser;
-
+pub mod manifest;
+pub mod worker;
 
 
 #[derive(Parser, Debug)]
