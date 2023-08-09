@@ -5,7 +5,7 @@ pub fn create(
     root_static_path: String,
     root_html_path: String,
     logo: String,
-    js_file_path: &str, // New argument for the path to the JavaScript file
+    js_file_path: &str,
 ) -> Result<(), Box<dyn std::error::Error>> {
     // Cache some static files
     let paths = vec![&root_static_path, &root_html_path, &logo];
