@@ -7,7 +7,6 @@ pub fn create(
     logo: String,
     js_file_path: &str,
 ) -> Result<(), Box<dyn std::error::Error>> {
-    // Cache some static files
     let paths = vec![&root_static_path, &root_html_path, &logo];
 
     // Convert the vector into the JavaScript array format
